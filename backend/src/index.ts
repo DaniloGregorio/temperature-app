@@ -1,11 +1,11 @@
 import express from "express";
-import config from "./config.ts/config";
-import cepRouter from "./route/cep";
+import cepRouter from "./route/cep.js";
+import config from "./config/config.js";
 
 const app = express();
 app.use(express.json());
 
-app.use("/local", cepRouter);
+app.use("/Query", cepRouter);
 
 app.listen(config.server.port, () => {
   console.log(`Running in port ${config.server.port}`);
